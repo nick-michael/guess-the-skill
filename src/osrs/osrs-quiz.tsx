@@ -38,11 +38,10 @@ export function OsrsQuiz() {
 
     function renderTextInput(skill: Skill) {
         return (
-            <input
+            <textarea
                 disabled={Boolean(results)}
                 key={skill}
                 className="skill-input skill-input__text"
-                type='text'
                 defaultValue={textInputFields.current[skill]}
                 onChange={(e) => textInputFields.current[skill] = e.target.value}
             />
@@ -109,8 +108,10 @@ export function OsrsQuiz() {
 
                     return (
                         <div className="skill">
-                            <div className="skill-image-container"><img src={skillDefinitions[skill].image} /></div>
-                            {isAssisted ? renderDropdownInput(skill) : renderTextInput(skill)}
+                            <div className="skill-image-container">
+                                <img src={skillDefinitions[skill].image} />
+                                {isAssisted ? renderDropdownInput(skill) : renderTextInput(skill)}
+                            </div>
                             <div className={answerClasses}>{skill}</div>
                         </div>
                     );
