@@ -84,7 +84,7 @@ export function OsrsQuiz() {
     return (
         <div className="osrs-quiz">
             <div className="osrs-quiz__title">OSRS</div>
-            <div className="osrs-quiz__subtitle">Guess The Skills</div>
+            <div className="osrs-quiz__subtitle">Guess The Skill</div>
             <div className="option-assisted">
                 <div className='option-assisted__input'>
                     <input type='checkbox' checked={isAssisted} onChange={e => setIsAssisted(e.target.checked)} />
