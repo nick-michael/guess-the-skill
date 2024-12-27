@@ -9,6 +9,8 @@ type Results = { [key in Skill]: boolean };
 
 const ANSWER_MIN_RATIO_CORRECT = 80;
 
+const sortedSkills = Object.values(Skill).sort();
+
 export function OsrsQuiz() {
     const textInputFields = useRef<Fields>({});
     const dropdownInputFields = useRef<Fields>({});
@@ -56,7 +58,7 @@ export function OsrsQuiz() {
                 defaultValue={dropdownInputFields.current[skill]}
             >
                 <option value={undefined}> ------- </option>
-                {Object.values(Skill).map(opt => {
+                {sortedSkills.map(opt => {
                     return (
                         <option value={opt}>{opt}</option>
                     );
